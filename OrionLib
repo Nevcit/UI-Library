@@ -1,4 +1,7 @@
-
+--[[
+   GUI Can Drag On Mobile
+   Modefied by : Nevcit
+--]]
 
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
