@@ -94,7 +94,7 @@ Window:SelectTab(1)
 local Section = Tabs.Main:AddSection("Section Name")
 ```
 
-## Creating a Section With Paragraf
+## Creating a Section With Paragraph
 ```lua
 local Section = Tabs.Main:AddSection("Section Name")
 Section:AddParagraph({
