@@ -13,7 +13,7 @@
 local Fluent = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Nevcit/UI-Library/Loadstring/FluentLib')))()
 ```
 
-## Creating a Window
+## Creating Window
 ```lua
 local Window = Fluent:CreateWindow({
     Title = "Fluent " .. Fluent.Version,
