@@ -186,6 +186,9 @@ local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
     Values = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"},
     Multi = false,
     Default = 1,
+    Callback = function(Value)
+
+    end
 })
 ```
 ## Event Handling Dropdown
@@ -208,6 +211,9 @@ local MultiDropdown = Tabs.Main:AddDropdown("MultiDropdown", {
    Values = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"},
    Multi = true,
    Default = {"seven", "twelve"},
+   Callback = function(Value)
+
+   end
 })
 ```
 
