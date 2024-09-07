@@ -8,7 +8,7 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevc
 
 ## 📜 Usage
 
-[Usage](https://raw.githubusercontent.com/Nevcit/UI-Library/main/Loadstring/FluentLib)
+[Usage](https://github.com/Nevcit/UI-Library/blob/main/Usage/Orion/Document.md)
 <br/>
 
 # RayfieldLib
@@ -18,6 +18,10 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevc
 ```lua
 local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevcit/UI-Library/main/Loadstring/RayfieldLib"))()
 ```
+## 📜 Usage
+
+[Usage](https://github.com/Nevcit/UI-Library/blob/main/Usage/Rayfield/Document.md)
+<br/>
 
 # FluentLib
 ![1000362507](https://github.com/user-attachments/assets/26575d6f-aa73-41a1-a5a6-0f603d0c90bd)
@@ -26,3 +30,9 @@ local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevc
 ```lua
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevcit/UI-Library/main/Loadstring/FluentLib"))()
 ```
+
+## 📜 Usage
+
+[Usage](https://github.com/Nevcit/UI-Library/blob/main/Usage/Fluent/Document.md)
+<br/>
+
