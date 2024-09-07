@@ -11,5 +11,5 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevc
 
 ## Loadstring
 ```lua
-local RayfieldLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevcit/UI-Library/main/Loadstring/RayfieldLib"))()
+local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevcit/UI-Library/main/Loadstring/RayfieldLib"))()
 ```
