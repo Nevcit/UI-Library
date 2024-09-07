@@ -62,7 +62,7 @@ Window:Dialog({
 })
 ```
 
-## Creating a Tabs
+## Creating Tabs
 ```lua
 -- Fluent provides Lucide Icons, they are optional
 local Tabs = {
@@ -89,12 +89,12 @@ SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
 ```
 
-## Creating a Section
+## Creating Sections
 ```lua
 local Section = Tabs.Main:AddSection("Section Name")
 ```
 
-## Creating a Section With Paragraph
+## Creating Section With Paragraph
 ```lua
 local Section = Tabs.Main:AddSection("Section Name")
 Section:AddParagraph({
@@ -110,7 +110,7 @@ Tabs.Main:AddParagraph({
 })
 ```
 
-## Creating a Button
+## Creating Buttons
 ```lua
 Tabs.Main:AddButton({
     Title = "Button",
