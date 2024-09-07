@@ -187,7 +187,7 @@ local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
     Multi = false,
     Default = 1,
     Callback = function(Value)
-
+      print(Value)
     end
 })
 ```
@@ -212,7 +212,7 @@ local MultiDropdown = Tabs.Main:AddDropdown("MultiDropdown", {
    Multi = true,
    Default = {"seven", "twelve"},
    Callback = function(Value)
-
+     print(Value)
    end
 })
 ```
