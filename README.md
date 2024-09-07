@@ -6,6 +6,11 @@
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevcit/UI-Library/main/Loadstring/FluentLib"))()
 ```
 
+## 📜 Usage
+
+[Usage](https://raw.githubusercontent.com/Nevcit/UI-Library/main/Loadstring/FluentLib)
+<br/>
+
 # RayfieldLib
 ![1000362503](https://github.com/user-attachments/assets/f8a28dc1-d0ee-44ed-b597-ca9760f3d9a1)
 
