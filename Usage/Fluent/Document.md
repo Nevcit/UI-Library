@@ -10,7 +10,7 @@
 
 ## Creating Library
 ```lua
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Fluent = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Nevcit/UI-Library/Loadstring/FluentLib')))()
 ```
 
 ## Creating a Window
@@ -104,7 +104,7 @@ Section:AddParagraph({
 
 ## Creating Paragraphs
 ```lua
-Tab:AddParagraph({
+Tabs.Main:AddParagraph({
     Title = "Paragraph",
     Content = "This is a paragraph.\nSecond line!"
 })
@@ -233,7 +233,7 @@ MultiDropdown:SetValue({
 
 ## Creating a Color Picker
 ```lua
-local Colorpicker = Tab:AddColorpicker("Colorpicker", {
+local Colorpicker = Tabs.Main:AddColorpicker("Colorpicker", {
     Title = "Colorpicker",
     Description = "Description for colorpicker",
     Default = Color3.fromRGB(96, 205, 255)
@@ -260,7 +260,7 @@ Colorpicker:SetValueRGB(Color3.fromRGB(0, 255, 140))
 
 ## Transparency Colorpicker
 ```
-local TColorpicker = Tab:AddColorpicker("TransparencyColorpicker", {
+local TColorpicker = Tabs.Main:AddColorpicker("TransparencyColorpicker", {
     Title = "Colorpicker",
     Description = "but you can change the transparency.",
     Transparency = 0,
@@ -285,7 +285,7 @@ TColorpicker:SetValue({0, 100, 100}, 0.5) -- hsv, transparency
 
 ## Creating Keybinds
 ```lua
-local Keybind = Tab:AddKeybind("Keybind", {
+local Keybind = Tabs.Main:AddKeybind("Keybind", {
     Title = "Keybind",
     Description = "Keybind Description",
     Mode = "Toggle", -- Always, Toggle, Hold
