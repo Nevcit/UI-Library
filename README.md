@@ -28,7 +28,7 @@ local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevc
 
 ## Loadstring
 ```lua
-local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevcit/UI-Library/main/Loadstring/FluentLib"))()
+local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevcit/UI-Library/refs/heads/main/Loadstring/FluentLib"))()
 ```
 
 ## 📜 Usage
