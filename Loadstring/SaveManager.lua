@@ -345,7 +345,8 @@ local SaveManager = {} do
 
   local AutoDeleteloadButton
 		AutoDeleteloadButton = section:AddButton({Title = "Reset autoload", Description = "", Callback = function()
-   local success = pcall(delfile, self.Folder .. "/settings/autoload.txt")
+		        local name = SaveManager.Options.SaveManager_ConfigList.Value	
+                        local success, decoded = pcall(delfile, self.Folder .. "/settings/autoload.txt")
 			if not success then 
 				self.Library:Notify({
 				Title = "Interface",
