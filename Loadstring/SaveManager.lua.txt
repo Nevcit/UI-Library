@@ -1,5 +1,5 @@
 local cloneref = cloneref or function(o) return o end
-local httpService = cloneref(game:GetService('HttpService'))
+local httpService = game:GetService('HttpService')
 local isfolder, isfile, listfiles = isfolder, isfile, listfiles
 
 if typeof(copyfunction) == "function" then -- fix for shitsploits
