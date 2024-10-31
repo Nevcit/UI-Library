@@ -69,7 +69,6 @@ local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
-})
 ```
 
 ## Interface and Configs
