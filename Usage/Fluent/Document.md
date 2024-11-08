@@ -73,7 +73,7 @@ local Tabs = {
 
 ## Interface and Configs
 ```lua
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevcit/UI-Library/refs/heads/main/Loadstring/SaveManager.lua.txt"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nevcit/UI-Library/refs/heads/main/Loadstring/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 SaveManager:SetLibrary(Fluent)
