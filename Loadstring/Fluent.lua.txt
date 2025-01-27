@@ -271,7 +271,7 @@ local ObjectTree = {
 						54,
 						"ModuleScript",
 						{
-							"Royx"
+							"Blue"
 						}
 					},
 					{
@@ -286,6 +286,13 @@ local ObjectTree = {
 						"ModuleScript",
 						{
 							"Rose"
+						}
+					},
+					{
+						55,
+						"ModuleScript",
+						{
+							"Pink"
 						}
 					},
 					{
