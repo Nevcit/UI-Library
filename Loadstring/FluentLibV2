@@ -6219,55 +6219,7 @@ local ClosureBindings = {
 		HoverChange = 0.04,
 		}
 	end,
-  [54] = function()local maui,script,require,getfenv,setfenv=ImportGlobals(54)return {
-		Name = "Blue",
-    Accent = Color3.fromRGB(0, 120, 255),
-
-    AcrylicMain = Color3.fromRGB(30, 30, 80),
-    AcrylicBorder = Color3.fromRGB(50, 90, 200),
-    AcrylicGradient = ColorSequence.new(Color3.fromRGB(0, 100, 200), Color3.fromRGB(0, 60, 150)),
-    AcrylicNoise = 0.92,
-
-    TitleBarLine = Color3.fromRGB(30, 85, 200),
-    Tab = Color3.fromRGB(0, 140, 255),
-
-    Element = Color3.fromRGB(50, 120, 200),
-    ElementBorder = Color3.fromRGB(20, 70, 150),
-    InElementBorder = Color3.fromRGB(25, 90, 170),
-    ElementTransparency = 0.86,
-
-    ToggleSlider = Color3.fromRGB(50, 120, 200),
-    ToggleToggled = Color3.fromRGB(0, 0, 50),
-
-    SliderRail = Color3.fromRGB(50, 120, 200),
-
-    DropdownFrame = Color3.fromRGB(50, 160, 255),
-    DropdownHolder = Color3.fromRGB(10, 50, 100),
-    DropdownBorder = Color3.fromRGB(0, 40, 90),
-    DropdownOption = Color3.fromRGB(50, 120, 200),
-
-    Keybind = Color3.fromRGB(50, 120, 200),
-
-    Input = Color3.fromRGB(50, 120, 200),
-    InputFocused = Color3.fromRGB(10, 10, 80),
-    InputIndicator = Color3.fromRGB(0, 150, 255),
-
-    Dialog = Color3.fromRGB(10, 50, 100),
-    DialogHolder = Color3.fromRGB(5, 40, 80),
-    DialogHolderLine = Color3.fromRGB(0, 35, 75),
-    DialogButton = Color3.fromRGB(10, 50, 100),
-    DialogButtonBorder = Color3.fromRGB(15, 90, 200),
-    DialogBorder = Color3.fromRGB(10, 70, 150),
-    DialogInput = Color3.fromRGB(0, 55, 130),
-    DialogInputLine = Color3.fromRGB(0, 160, 220),
-
-    Text = Color3.fromRGB(240, 240, 240),
-    SubText = Color3.fromRGB(170, 170, 170),
-    Hover = Color3.fromRGB(50, 120, 200),
-    HoverChange = 0.04,
-    }
-  end,
-  [55] = function()local maui,script,require,getfenv,setfenv=ImportGlobals(55)return {
+        [54] = function()local maui,script,require,getfenv,setfenv=ImportGlobals(54)return {
 		Name = "Pink",
 		Accent = Color3.fromRGB(255, 34, 97),
 
