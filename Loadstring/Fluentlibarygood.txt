@@ -3278,6 +3278,7 @@ local ClosureBindings = {
 				ScrollBarImageTransparency = 0.95,
 				ScrollBarThickness = 4,
 				BorderSizePixel = 0,
+				ZIndex = 1,
 				CanvasSize = UDim2.fromScale(0, 0),
 			},{
 				New("UIPadding", {
