@@ -3684,6 +3684,20 @@ local ClosureBindings = {
 			end
 
 			Library.Options[Idx] = Dropdown
+                        local function UpdateDropdownList(SearchQuery)
+                           for _, Button in ipairs(DropdownScrollFrame:GetChildren()) do
+                              if Button:IsA("TextButton") then
+                                if SearchQuery == "" or string.find(string.lower(Button.ButtonLabel.Text), string.lower(SearchQuery)) then
+                                  Button.Visible = true
+                                else
+                                  Button.Visible = false
+                                end
+                              end
+                           end
+                        end
+                        SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
+                           UpdateDropdownList(SearchBox.Text)
+                        end)
 			return Dropdown
 		end
 
