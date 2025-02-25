@@ -3281,7 +3281,7 @@ local ClosureBindings = {
 				CanvasSize = UDim2.fromScale(0, 0),
 			},{
 				New("UIPadding", {
-				    PaddingTop = UDim.new(0, 30),
+				    PaddingTop = UDim.new(0, 50),
 					Parent = DropdownScrollFrame
 				}),
 				DropdownListLayout,
@@ -3326,7 +3326,7 @@ local ClosureBindings = {
                 TextColor3 = Color3.fromRGB(200, 200, 200),
                 ClearTextOnFocus = false,
                 ZIndex = 2,
-                Parent = DropdownScrollFrame
+                Parent = DropdownHolderFrame
             })
 
 			local DropdownHolderCanvas = New("Frame", {
