@@ -3282,7 +3282,7 @@ local ClosureBindings = {
 				CanvasSize = UDim2.fromScale(0, 0),
 			},{
 				New("UIPadding", {
-				    PaddingTop = UDim.new(0, 30),
+				    PaddingTop = UDim.new(0, 50),
 					Parent = DropdownScrollFrame
 				}),
 				DropdownListLayout,
