@@ -3548,6 +3548,20 @@ local ClosureBindings = {
 						SetSelTransparency(Selected and 0 or 1)
 					end
 
+          local Scrolling = false
+
+          DropdownScrollFrame.MouseWheelForward:Connect(function()
+            Scrolling = true
+            task.wait(0.2)
+            Scrolling = false
+          end)
+
+          DropdownScrollFrame.MouseWheelBackward:Connect(function()
+            Scrolling = true
+            task.wait(0.2)
+            Scrolling = false
+          end)
+     
 					ButtonLabel.InputBegan:Connect(function(Input)
 						if
 							Input.UserInputType == Enum.UserInputType.MouseButton1
