@@ -3326,7 +3326,7 @@ local ClosureBindings = {
                 TextColor3 = Color3.fromRGB(200, 200, 200),
                 ClearTextOnFocus = false,
                 ZIndex = 2,
-                Parent = DropdownHolderFrame
+                Parent = DropdownScrollFrame
             })
 
 			local DropdownHolderCanvas = New("Frame", {
