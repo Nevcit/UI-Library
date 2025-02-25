@@ -3321,7 +3321,7 @@ local ClosureBindings = {
                                  BackgroundColor3 = Color3.fromRGB(50, 50, 50),
                                  TextColor3 = Color3.fromRGB(200, 200, 200),
                                  ClearTextOnFocus = false,
-                                 ZIndex = 2
+                                 ZIndex = 2,
                                  Parent = DropdownHolderFrame
                         })
 
