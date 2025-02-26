@@ -3268,7 +3268,7 @@ local ClosureBindings = {
 			})
 
 			local DropdownScrollFrame = New("ScrollingFrame", {
-				Size = UDim2.new(1, -5, 0, 0),
+				Size = UDim2.new(1, -5, 1, -35),
 				Position = UDim2.fromOffset(5, 35),
 				BackgroundTransparency = 1,
 				BottomImage = "rbxassetid://6889812791",
