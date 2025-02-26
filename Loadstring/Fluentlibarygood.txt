@@ -3288,7 +3288,7 @@ local ClosureBindings = {
 			})
 
 			local DropdownHolderFrame = New("Frame", {
-				Size = UDim2.fromScale(1, 3),
+				Size = UDim2.fromScale(1, 1.4),
 				ThemeTag = {
 					BackgroundColor3 = "DropdownHolder",
 				},
