@@ -3457,7 +3457,7 @@ local ClosureBindings = {
 					end
 				end
 
-				local Count = 1
+				local Count = 0
 
 				for Idx, Value in next, Values do
 					local Table = {}
