@@ -3268,8 +3268,8 @@ local ClosureBindings = {
 			})
 
 			local DropdownScrollFrame = New("ScrollingFrame", {
-				Size = UDim2.new(1, -5, 1, -10),
-				Position = UDim2.fromOffset(5, 5),
+				Size = UDim2.new(1, -5, 1, -50),
+				Position = UDim2.fromOffset(5, 50),
 				BackgroundTransparency = 1,
 				BottomImage = "rbxassetid://6889812791",
 				MidImage = "rbxassetid://6889812721",
@@ -3288,7 +3288,7 @@ local ClosureBindings = {
 			})
 
 			local DropdownHolderFrame = New("Frame", {
-				Size = UDim2.fromScale(1, 0.6),
+				Size = UDim2.fromScale(1, 3),
 				ThemeTag = {
 					BackgroundColor3 = "DropdownHolder",
 				},
@@ -3556,45 +3556,45 @@ local ClosureBindings = {
 						SetSelTransparency(Selected and 0 or 1)
 					end
 
-                    local Scrolling = false
+                                        local Scrolling = false
 
-                    DropdownScrollFrame.MouseWheelForward:Connect(function()
-                        Scrolling = true
-                        task.wait(0.2)
-                        Scrolling = false
-                    end)
+                                         DropdownScrollFrame.MouseWheelForward:Connect(function()
+                                           Scrolling = true
+                                           task.wait(0.2)
+                                           Scrolling = false
+                                         end)
 
-                    DropdownScrollFrame.MouseWheelBackward:Connect(function()
-                        Scrolling = true
-                        task.wait(0.2)
-                        Scrolling = false
-                    end)
+                                         DropdownScrollFrame.MouseWheelBackward:Connect(function()
+                                           Scrolling = true
+                                           task.wait(0.2)
+                                           Scrolling = false
+                                         end)
      
-		            ButtonLabel.InputBegan:Connect(function(Input)
-		                if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
-				            local Try = not Selected
+		                         ButtonLabel.InputBegan:Connect(function(Input)
+		                           if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
+				             local Try = not Selected
 
-				            if Dropdown:GetActiveValues() == 1 and not Try and not Config.AllowNull then
-					            if Config.Multi then
-						            Selected = Try
-						            Dropdown.Value[Value] = Selected and true or nil
-					            else
-						            Selected = Try
-						            Dropdown.Value = Selected and Value or nil
+				             if Dropdown:GetActiveValues() == 1 and not Try and not Config.AllowNull then
+				               if Config.Multi then
+				                 Selected = Try
+					         Dropdown.Value[Value] = Selected and true or nil
+					       else
+						 Selected = Try
+						 Dropdown.Value = Selected and Value or nil
 
-						            for _, OtherButton in next, Buttons do
-						                OtherButton:UpdateButton()
-						            end
-					            end
+						 for _, OtherButton in next, Buttons do
+				         	   OtherButton:UpdateButton()
+						 end
+					       end
 
-					            Table:UpdateButton()
-					            Dropdown:Display()
+					       Table:UpdateButton()
+					       Dropdown:Display()
 
-                                Library:SafeCallback(Dropdown.Callback, Dropdown.Value)
-					            Library:SafeCallback(Dropdown.Changed, Dropdown.Value)
-				            end
-			            end
-		            end)
+                                               Library:SafeCallback(Dropdown.Callback, Dropdown.Value)
+					       Library:SafeCallback(Dropdown.Changed, Dropdown.Value)
+				             end
+			                   end
+		                         end)
 
 					Table:UpdateButton()
 					Dropdown:Display()
