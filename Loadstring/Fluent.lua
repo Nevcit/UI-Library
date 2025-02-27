@@ -3359,9 +3359,9 @@ local ClosureBindings = {
 			local ListSizeX = 0
 			local function RecalculateListSize()
 				if #Dropdown.Values > 10 then
-					DropdownHolderCanvas.Size = UDim2.fromOffset(ListSizeX, 392 + 25)
+					DropdownHolderCanvas.Size = UDim2.fromOffset(ListSizeX, 392)
 				else
-					DropdownHolderCanvas.Size = UDim2.fromOffset(ListSizeX, DropdownListLayout.AbsoluteContentSize.Y + 10 + 25)
+					DropdownHolderCanvas.Size = UDim2.fromOffset(ListSizeX, DropdownListLayout.AbsoluteContentSize.Y + 10)
 				end
 			end
 
@@ -3451,7 +3451,7 @@ local ClosureBindings = {
 				local Buttons = {}
 
 				for _, Element in next, DropdownScrollFrame:GetChildren() do
-					if not Element:IsA("UIListLayout") then
+					if not Element:IsA("UIListLayout") and Element ~= SearchBox then
 						Element:Destroy()
 					end
 				end
