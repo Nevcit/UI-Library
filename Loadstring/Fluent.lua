@@ -3319,6 +3319,7 @@ local ClosureBindings = {
 				Text = "",
 				Font = Enum.Font.Gotham,
 				TextSize = 13,
+				BorderSizePixel = 0,
 				Size = UDim2.new(1, -10, 0, 25),
 				Position = UDim2.new(0, 5, 0, 5),
 				TextColor3 = Color3.fromRGB(200, 200, 200),
