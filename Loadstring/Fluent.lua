@@ -3344,20 +3344,6 @@ local ClosureBindings = {
 			})
 			table.insert(Library.OpenFrames, DropdownHolderCanvas)
 
-			local Scrolling = false
-
-			DropdownScrollFrame.MouseWheelForward:Connect(function()
-				Scrolling = true
-				task.wait(0.2)
-				Scrolling = false
-			end)
-
-			DropdownScrollFrame.MouseWheelBackward:Connect(function()
-				Scrolling = true
-				task.wait(0.2)
-				Scrolling = false
-			end)
-
 			local function RecalculateListPosition()
 				local Add = 0
 				if Camera.ViewportSize.Y - DropdownInner.AbsolutePosition.Y < DropdownHolderCanvas.AbsoluteSize.Y - 5 then
