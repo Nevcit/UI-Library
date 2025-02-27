@@ -3324,7 +3324,7 @@ local ClosureBindings = {
 				TextColor3 = Color3.fromRGB(200, 200, 200),
 				ClearTextOnFocus = false,
 				ZIndex = 2,
-				Parent = DropdownHolderFrame,
+				Parent = DropdownScrollFrame,
 				ThemeTag = {
 					BackgroundColor3 = "DropdownHolder",
 					TextColor3 = "Text",
@@ -3451,7 +3451,7 @@ local ClosureBindings = {
 				local Buttons = {}
 
 				for _, Element in next, DropdownScrollFrame:GetChildren() do
-					if not Element:IsA("UIListLayout") then
+					if not Element:IsA("UIListLayout") and Element ~= SearchBox then
 						Element:Destroy()
 					end
 				end
