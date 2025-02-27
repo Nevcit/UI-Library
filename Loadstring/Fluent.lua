@@ -3323,7 +3323,7 @@ local ClosureBindings = {
 				Position = UDim2.new(0, 5, 0, 5),
 				TextColor3 = Color3.fromRGB(200, 200, 200),
 				ClearTextOnFocus = false,
-				BorderSizePixel = 0,
+				BorderSizePixel = 0
 				ZIndex = 2,
 				Parent = DropdownScrollFrame,
 				ThemeTag = {
@@ -3344,6 +3344,20 @@ local ClosureBindings = {
 				}),
 			})
 			table.insert(Library.OpenFrames, DropdownHolderCanvas)
+
+			local Scrolling = false
+
+			DropdownScrollFrame.MouseWheelForward:Connect(function()
+				Scrolling = true
+				task.wait(0.2)
+				Scrolling = false
+			end)
+
+			DropdownScrollFrame.MouseWheelBackward:Connect(function()
+				Scrolling = true
+				task.wait(0.2)
+				Scrolling = false
+			end)
 
 			local function RecalculateListPosition()
 				local Add = 0
@@ -3555,35 +3569,29 @@ local ClosureBindings = {
 						SelectorSizeMotor:setGoal(Flipper.Spring.new(Selected and 14 or 6, { frequency = 6 }))
 						SetSelTransparency(Selected and 0 or 1)
 					end
-					
-					ButtonLabel.InputBegan:Connect(function(Input)
+
+					Button.MouseButton1Click:Connect(function()
 						if Scrolling then return end
-						if
-							Input.UserInputType == Enum.UserInputType.MouseButton1
-							or Input.UserInputType == Enum.UserInputType.Touch
-						then
-							local Try = not Selected
+						local Try = not Selected
 
-							if Dropdown:GetActiveValues() == 1 and not Try and not Config.AllowNull then
+						if Dropdown:GetActiveValues() == 1 and not Try and not Config.AllowNull then
+							if Config.Multi then
+								Selected = Try
+								Dropdown.Value[Value] = Selected and true or nil
 							else
-								if Config.Multi then
-									Selected = Try
-									Dropdown.Value[Value] = Selected and true or nil
-								else
-									Selected = Try
-									Dropdown.Value = Selected and Value or nil
+								Selected = Try
+								Dropdown.Value = Selected and Value or nil
 
-									for _, OtherButton in next, Buttons do
-										OtherButton:UpdateButton()
-									end
+								for _, OtherButton in next, Buttons do
+									OtherButton:UpdateButton()
 								end
-
-								Table:UpdateButton()
-								Dropdown:Display()
-
-								Library:SafeCallback(Dropdown.Callback, Dropdown.Value)
-								Library:SafeCallback(Dropdown.Changed, Dropdown.Value)
 							end
+
+							Table:UpdateButton()
+							Dropdown:Display()
+
+							Library:SafeCallback(Dropdown.Callback, Dropdown.Value)
+							Library:SafeCallback(Dropdown.Changed, Dropdown.Value)
 						end
 					end)
 
