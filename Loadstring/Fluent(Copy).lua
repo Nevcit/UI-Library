@@ -4166,16 +4166,24 @@ local ClosureBindings = {
 				TweenService:Create(SliderInner, TweenInfo.new(0.3, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0.4}):Play()
 			end)
 
-			Creator.AddSignal(SliderDot.InputBegan, function(Input)
-				if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
-					Dragging = true
-				end
-			end)
+			Creator.AddSignal(SliderDot.InputBegan, function(Input)  
+			    if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then  
+					Dragging = true  
+				end  
+			end)  
 
-			Creator.AddSignal(SliderDot.InputEnded, function(Input)
-				if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
-					Dragging = false
-				end
+			Creator.AddSignal(SliderDot.InputEnded, function(Input)  
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then  
+					Dragging = false  
+				end  
+			end)  
+
+			Creator.AddSignal(UserInputService.InputChanged, function(Input)  
+				if Dragging and (Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType == Enum.UserInputType.Touch) then  
+					local SizeScale = math.clamp((Input.Position.X - SliderRail.AbsolutePosition.X) / SliderRail.AbsoluteSize.X, 0, 1)  
+
+					Slider:SetValue(Slider.Min + ((Slider.Max - Slider.Min) * SizeScale))  
+				end  
 			end)
 
 			Creator.AddSignal(SliderInner.InputBegan, function(Input)
@@ -4189,20 +4197,12 @@ local ClosureBindings = {
 					Dragging = false
 				end
 			end)
-
-			Creator.AddSignal(SliderDisplay:GetPropertyChangedSignal("Text"), function()
-				if tonumber(SliderDisplay.Text) and SliderDisplay.Text:len() > 0 then
-					Slider:SetValue(tonumber(SliderDisplay.Text))
-				end
+			
+			Creator.AddSignal(SliderDisplay:GetPropertyChangedSignal("Text"), function()  
+			    if tonumber(SliderDisplay.Text) and SliderDisplay.Text:len() > 0 then  
+					Slider:SetValue(tonumber(SliderDisplay.Text))  
+				end  
 			end)
-
-			Creator.AddSignal(UserInputService.InputChanged, function(Input)
-				if Dragging and ( Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType == Enum.UserInputType.Touch ) then
-					local SizeScale = math.clamp((Input.Position.X - SliderRail.AbsolutePosition.X) / SliderRail.AbsoluteSize.X, 0, 1)
-					Slider:SetValue(Slider.Min + ((Slider.Max - Slider.Min) * SizeScale))
-				end
-			end)
-
 
 			function Slider:OnChanged(Func)
 				Slider.Changed = Func
@@ -4211,11 +4211,21 @@ local ClosureBindings = {
 
 			function Slider:SetValue(Value)  
 				self.Value = Library:Round(math.clamp(Value, Slider.Min, Slider.Max), Slider.Rounding)  
+
 				local newPosition = UDim2.new((self.Value - Slider.Min) / (Slider.Max - Slider.Min), -7, 0.5, 0)
 				local newSize = UDim2.fromScale((self.Value - Slider.Min) / (Slider.Max - Slider.Min), 1)
-				TweenService:Create(SliderDot, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = newPosition}):Play()
-				TweenService:Create(SliderFill, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = newSize}):Play()
+
+				-- Jika sedang dragging, jangan gunakan TweenService
+				if not Dragging then
+					TweenService:Create(SliderDot, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = newPosition}):Play()
+					TweenService:Create(SliderFill, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = newSize}):Play()
+				else
+					SliderDot.Position = newPosition
+					SliderFill.Size = newSize
+				end
+
 				SliderDisplay.Text = tostring(self.Value)  
+
 				Library:SafeCallback(Slider.Callback, self.Value)  
 				Library:SafeCallback(Slider.Changed, self.Value)  
 			end
