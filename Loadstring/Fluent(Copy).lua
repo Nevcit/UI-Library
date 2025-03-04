@@ -4160,21 +4160,19 @@ local ClosureBindings = {
 
 			local RunService = game:GetService("RunService")
 			local LastDisplayedValue = nil
+			local TweenSpeed = 0.2
 			local function UpdateSlider()
 				while Dragging do
 					local MousePos = UserInputService:GetMouseLocation().X
 					local RailStart = SliderRail.AbsolutePosition.X
 					local RailSize = SliderRail.AbsoluteSize.X
-					local SizeScale = math.clamp((MousePos - RailStart) / RailSize, 0, 1)
-					local RawValue = Slider.Min + ((Slider.Max - Slider.Min) * SizeScale)
-					Slider.Value = RawValue
-					SliderDot.Position = UDim2.new(SizeScale, -7, 0.5, 0)
-					SliderFill.Size = UDim2.fromScale(SizeScale, 1)
-					local RoundedValue = Library:Round(Slider.Value, Slider.Rounding)
-					if RoundedValue ~= LastDisplayedValue then
-						LastDisplayedValue = RoundedValue
-						SliderDisplay.Text = tostring(RoundedValue)
-					end
+					local TargetScale = math.clamp((MousePos - RailStart) / RailSize, 0, 1)
+					local TargetValue = Slider.Min + ((Slider.Max - Slider.Min) * TargetScale)
+					Slider.Value = Slider.Value + (TargetValue - Slider.Value) * TweenSpeed
+					local SmoothedScale = (Slider.Value - Slider.Min) / (Slider.Max - Slider.Min)
+					SliderDot.Position = UDim2.new(SmoothedScale, -7, 0.5, 0)
+					SliderFill.Size = UDim2.fromScale(SmoothedScale, 1)
+					SliderDisplay.Text = tostring(Library:Round(Slider.Value, Slider.Rounding))
 					RunService.RenderStepped:Wait()
 				end
 			end
