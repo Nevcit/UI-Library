@@ -4160,7 +4160,6 @@ local ClosureBindings = {
 
 			local RunService = game:GetService("RunService")
 			local LastDisplayedValue = nil
-
 			local function UpdateSlider()
 				while Dragging do
 					local MousePos = UserInputService:GetMouseLocation().X
@@ -4180,12 +4179,13 @@ local ClosureBindings = {
 				end
 			end
 
-			Creator.AddSignal(UserInputService.InputChanged, function(Input)
-				if Dragging and (Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType == Enum.UserInputType.Touch) then
+			Creator.AddSignal(SliderDot.InputBegan, function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
+					Dragging = true
 					task.spawn(UpdateSlider)
 				end
 			end)
-
+    		
 			Creator.AddSignal(SliderDot.InputEnded, function(Input)
 				if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
 					Dragging = false
@@ -4193,6 +4193,37 @@ local ClosureBindings = {
 					Slider:SetValue(FinalValue)
 				end
 			end)
+    	
+			Creator.AddSignal(SliderInner.InputBegan, function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
+					Dragging = true
+				end
+			end)
+
+			Creator.AddSignal(SliderInner.InputEnded, function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
+					Dragging = false
+				end
+			end)
+
+			Creator.AddSignal(SliderDisplay:GetPropertyChangedSignal("Text"), function()
+				if tonumber(SliderDisplay.Text) and SliderDisplay.Text:len() > 0 then
+					Slider:SetValue(tonumber(SliderDisplay.Text))
+				end
+			end)
+
+			Creator.AddSignal(UserInputService.InputChanged, function(Input)
+				if Dragging and ( Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType == Enum.UserInputType.Touch ) then
+					local SizeScale = math.clamp((Input.Position.X - SliderRail.AbsolutePosition.X) / SliderRail.AbsoluteSize.X, 0, 1)
+					Slider:SetValue(Slider.Min + ((Slider.Max - Slider.Min) * SizeScale))
+				end
+			end)
+
+
+			function Slider:OnChanged(Func)
+				Slider.Changed = Func
+				Func(Slider.Value)
+			end
 
 			function Slider:SetValue(Value)
 				self.Value = Library:Round(math.clamp(Value, Slider.Min, Slider.Max), Slider.Rounding)
