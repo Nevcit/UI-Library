@@ -4172,7 +4172,7 @@ local ClosureBindings = {
 					local SmoothedScale = (Slider.Value - Slider.Min) / (Slider.Max - Slider.Min)
 					SliderDot.Position = UDim2.new(SmoothedScale, -7, 0.5, 0)
 					SliderFill.Size = UDim2.fromScale(SmoothedScale, 1)
-					SliderDisplay.Text = tostring(Library:Round(Slider.Value, Slider.Rounding))
+					SliderDisplay.Text = tostring(Slider.Value)
 					RunService.RenderStepped:Wait()
 				end
 			end
