@@ -6275,9 +6275,9 @@ local ClosureBindings = {
 		Name = "Blue",
 		Accent = Color3.fromRGB(0, 120, 255),
 
-		AcrylicMain = Color3.fromRGB(30, 30, 80),
-		AcrylicBorder = Color3.fromRGB(50, 90, 200),
-		AcrylicGradient = ColorSequence.new(Color3.fromRGB(0, 100, 200), Color3.fromRGB(0, 60, 150)),
+		AcrylicMain = Color3.fromRGB(20, 20, 20),
+		AcrylicBorder = Color3.fromRGB(13, 13, 13),
+		AcrylicGradient = ColorSequence.new(Color3.fromRGB(20, 20, 20), Color3.fromRGB(15, 15, 15)),
 		AcrylicNoise = 0.92,
 
 		TitleBarLine = Color3.fromRGB(13, 13, 13),
@@ -6289,7 +6289,7 @@ local ClosureBindings = {
 		ElementTransparency = 0.86,
 
 		ToggleSlider = Color3.fromRGB(50, 120, 200),
-		ToggleToggled = Color3.fromRGB(0, 0, 50),
+		ToggleToggled = Color3.fromRGB(40, 40, 40),
 
 		SliderRail = Color3.fromRGB(50, 120, 200),
 
@@ -6301,8 +6301,8 @@ local ClosureBindings = {
 		Keybind = Color3.fromRGB(20, 20, 20),
 
 		Input = Color3.fromRGB(20, 20, 20),
-		InputFocused = Color3.fromRGB(10, 10, 80),
-		InputIndicator = Color3.fromRGB(0, 150, 255),
+		InputFocused = Color3.fromRGB(20, 10, 30),
+		InputIndicator = Color3.fromRGB(25, 25, 25),
 
 		Dialog = Color3.fromRGB(24, 24, 24),
 		DialogHolder = Color3.fromRGB(27, 27, 27),
