@@ -1,5 +1,5 @@
 --- button
-local Show_Button = false
+local Show_Button = true
 local Button_Icon = ""
 ---
 
