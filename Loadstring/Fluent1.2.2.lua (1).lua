@@ -3448,7 +3448,7 @@ Components.TitleBar = (function()
 					CornerRadius = UDim.new(0, 7),
 				}),
 				New("ImageLabel", {
-					Image = Icon,
+					Image = "rbxassetid://93548038585488" or Icon,
 					Size = UDim2.fromOffset(16, 16),
 					Position = UDim2.fromScale(0.5, 0.5),
 					AnchorPoint = Vector2.new(0.5, 0.5),
@@ -4305,6 +4305,28 @@ Components.Window = (function()
 					})
 				end
 			end
+			local uiconnectionNevcit
+			local ButtonNevcit = New("ImageButton", {
+				Parent = Config.Parent,
+				Image = "rbxassetid://93548038585488",
+				Size = UDim2.new(0, 30, 0, 30),
+				Position = UDim2.new(0.15, 0, 0.15, 0),
+				BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+				Active = true,
+				Draggable = true
+			})
+			local UIStrokeNevcit = New("UIStroke", {
+				Parent = ButtonNevcit,
+				Thickness = 4,
+				Color = Color3.fromRGB(0, 0, 0)
+			})
+			uiconnectionNevcit = ButtonNevcit.MouseButton1Click:Connect(function()
+				if Window.Root and Window.Root.Visible == false then
+					Window.Root.Visible = true
+					ButtonNevcit:Destroy()
+					uiconnectionNevcit:Disconnect()
+				end
+			end)
 		end
 
 		function Window:Destroy()
