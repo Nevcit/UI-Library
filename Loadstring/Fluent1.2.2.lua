@@ -3448,7 +3448,7 @@ Components.TitleBar = (function()
 					CornerRadius = UDim.new(0, 7),
 				}),
 				New("ImageLabel", {
-					Image = "rbxassetid://93548038585488" or Icon,
+					Image = "rbxassetid://136624296101287" or Icon,
 					Size = UDim2.fromOffset(16, 16),
 					Position = UDim2.fromScale(0.5, 0.5),
 					AnchorPoint = Vector2.new(0.5, 0.5),
