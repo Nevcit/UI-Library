@@ -1,6 +1,6 @@
 --- button
 local Show_Button = true
-local Button_Icon = "rbxassetid://136624296101287"
+local Button_Icon = "rbxassetid://93548038585488"
 ---
 
 local Lighting = game:GetService("Lighting")
@@ -3448,7 +3448,7 @@ Components.TitleBar = (function()
 					CornerRadius = UDim.new(0, 7),
 				}),
 				New("ImageLabel", {
-					Image = "rbxassetid://136624296101287" or Icon,
+					Image = Icon,
 					Size = UDim2.fromOffset(16, 16),
 					Position = UDim2.fromScale(0.5, 0.5),
 					AnchorPoint = Vector2.new(0.5, 0.5),
@@ -3572,7 +3572,7 @@ Components.TitleBar = (function()
 
 				-- Logo Section
 				New("ImageLabel", {
-					Image = "rbxassetid://11262159835",
+					Image = "rbxassetid://136624296101287",
 					Size = UDim2.fromOffset(Config.LogoSize or 24, Config.LogoSize or 24),
 					BackgroundTransparency = 1,
 					LayoutOrder = 0,
@@ -4306,10 +4306,11 @@ Components.Window = (function()
 				end
 			end
 			local uiconnectionNevcit
+			local size = {30, 30}
 			local ButtonNevcit = New("ImageButton", {
 				Parent = Config.Parent,
 				Image = "rbxassetid://93548038585488",
-				Size = UDim2.new(0, 30, 0, 30),
+				Size = UDim2.new(0, size[1], 0, size[1]),
 				Position = UDim2.new(0.15, 0, 0.15, 0),
 				BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 				Active = true,
