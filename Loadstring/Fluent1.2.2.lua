@@ -4293,6 +4293,7 @@ Components.Window = (function()
 			Size = UDim2.new(0, size[1], 0, size[1]),
 			Position = UDim2.new(0.15, 0, 0.15, 0),
 			BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+			BackgroundTransparency = 1,
 			Active = true,
 			Draggable = true
 		})
