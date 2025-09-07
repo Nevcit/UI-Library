@@ -4285,9 +4285,35 @@ Components.Window = (function()
 			end
 		end)
 
+		local uiconnectionNevcit
+		local size = {30, 30}
+		local ButtonNevcit = New("ImageButton", {
+			Parent = Config.Parent,
+			Image = "rbxassetid://93548038585488",
+			Size = UDim2.new(0, size[1], 0, size[1]),
+			Position = UDim2.new(0.15, 0, 0.15, 0),
+			BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+			Active = true,
+			Draggable = true
+		})
+		local UIStrokeNevcit = New("UIStroke", {
+			Parent = ButtonNevcit,
+			Thickness = 4,
+			Color = Color3.fromRGB(0, 0, 0)
+		})
+		uiconnectionNevcit = ButtonNevcit.MouseButton1Click:Connect(function()
+			if Window.Root and Window.Root.Visible == false then
+				Window.Root.Visible = true
+				ButtonNevcit.Active = false
+				ButtonNevcit.Visible = false
+			end
+		end)
+
 		function Window:Minimize()
 			Window.Minimized = not Window.Minimized
 			Window.Root.Visible = false
+			ButtonNevcit.Active = true
+			ButtonNevcit.Visible = true 
 			if not MinimizeNotif then
 				MinimizeNotif = true
 				local Key = Library.MinimizeKeybind and Library.MinimizeKeybind.Value or Library.MinimizeKey.Name
@@ -4305,29 +4331,6 @@ Components.Window = (function()
 					})
 				end
 			end
-			local uiconnectionNevcit
-			local size = {30, 30}
-			local ButtonNevcit = New("ImageButton", {
-				Parent = Config.Parent,
-				Image = "rbxassetid://93548038585488",
-				Size = UDim2.new(0, size[1], 0, size[1]),
-				Position = UDim2.new(0.15, 0, 0.15, 0),
-				BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-				Active = true,
-				Draggable = true
-			})
-			local UIStrokeNevcit = New("UIStroke", {
-				Parent = ButtonNevcit,
-				Thickness = 4,
-				Color = Color3.fromRGB(0, 0, 0)
-			})
-			uiconnectionNevcit = ButtonNevcit.MouseButton1Click:Connect(function()
-				if Window.Root and Window.Root.Visible == false then
-					Window.Root.Visible = true
-					ButtonNevcit:Destroy()
-					uiconnectionNevcit:Disconnect()
-				end
-			end)
 		end
 
 		function Window:Destroy()
