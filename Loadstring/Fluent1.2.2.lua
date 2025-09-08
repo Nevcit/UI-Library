@@ -1,6 +1,6 @@
 --- button
-local Show_Button = true
-local Button_Icon = "rbxassetid://93548038585488"
+local Show_Button = false
+local Button_Icon = ""
 ---
 
 local Lighting = game:GetService("Lighting")
@@ -3572,7 +3572,7 @@ Components.TitleBar = (function()
 
 				-- Logo Section
 				New("ImageLabel", {
-					Image = "rbxassetid://136624296101287",
+					Image = "rbxassetid://93548038585488",
 					Size = UDim2.fromOffset(Config.LogoSize or 24, Config.LogoSize or 24),
 					BackgroundTransparency = 1,
 					LayoutOrder = 0,
